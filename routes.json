@@ -1,0 +1,6 @@
+{
+  "/api": [
+    "https://httpbin.org",
+    "https://postman-echo.com"
+  ]
+}

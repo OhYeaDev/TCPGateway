@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TCPGateway</title>
+<style>
+body {
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: Arial;
+  text-align: center;
+}
+.container {
+  margin-top: 100px;
+}
+input, button {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+}
+button {
+  background: #38bdf8;
+  color: black;
+  cursor: pointer;
+}
+.result {
+  margin-top: 20px;
+  white-space: pre-wrap;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>TCPGateway</h1>
+  <p>Gateway is running</p>
+
+  <input id="path" placeholder="/api/get">
+  <button onclick="test()">Send</button>
+
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+async function test() {
+  const path = document.getElementById("path").value;
+  const res = await fetch(path);
+  const text = await res.text();
+  document.getElementById("result").innerText = text;
+}
+</script>
+
+</body>
+</html>
